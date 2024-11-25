@@ -1,237 +1,325 @@
 body {
     margin: 0;
     overflow: hidden;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    width: 100vw;
+}
+
+:root {
+    --base-unit: min(1vw, 10px);
+    --altura-pulo: calc(15 * var(--base-unit));
 }
 
 .inimigo {
     position: absolute;
-    width: 50px;
-    height: 50px;
-    background-image: url('Images/Inimigonormal.png'); /* Sprite do inimigo */
+    width: calc(3 * var(--base-unit));
+    height: calc(3 * var(--base-unit));
+    background-image: url('Images/Inimigonormal.png');
     background-size: contain;
-    bottom: 50px;  /* A partir do fundo da tela */
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    padding: 0;
+    transition: all 0.06s linear;
 }
 
-#inimigo1 {
-    left: 20vw;
-}
+#inimigo1 { left: calc(80 * var(--base-unit)); bottom: calc(4 * var(--base-unit)); }
+#inimigo2 { left: calc(140 * var(--base-unit)); bottom: calc(4 * var(--base-unit)); }
+#inimigo3 { left: calc(200 * var(--base-unit)); bottom: calc(4 * var(--base-unit)); }
+#inimigo4 { left: calc(260 * var(--base-unit)); bottom: calc(4 * var(--base-unit)); }
 
-#inimigo2 {
-    left: 60vw;
-}
-
-#inimigo3 {
-    left: 100vw;
-}
-
-#inimigo4 {
-    left: 120vw;
-}
-
-#inimigo5 {
-    left: 150vw;
-}
+#inimigo5 { left: calc(65 * var(--base-unit)); bottom: calc(23 * var(--base-unit)); }
+#inimigo6 { left: calc(145 * var(--base-unit)); bottom: calc(15 * var(--base-unit)); }
+#inimigo7 { left: calc(185 * var(--base-unit)); bottom: calc(21 * var(--base-unit)); }
+#inimigo8 { left: calc(225 * var(--base-unit)); bottom: calc(18 * var(--base-unit)); }
 
 .boss {
     position: absolute;
-    width: 100px;
-    height: 100px;
-    background-image: url('Images/Bossfinal.png'); /* Sprite do boss */
+    width: calc(10 * var(--base-unit));
+    height: calc(10 * var(--base-unit));
+    background-image: url('Images/Bossfinal.png');
     background-size: contain;
-    bottom: 150px;
-    left: calc(300vw - 200px); /* Fica próximo ao final do mapa */
-    animation: bossMovimento 2s infinite ease-in-out;
+    background-repeat: no-repeat;
+    bottom: calc(4 * var(--base-unit));
+    left: calc(280 * var(--base-unit));
+    animation: bossMovimento 2.5s infinite ease-in-out;
+    box-sizing: border-box;
+    padding: 0;
 }
 
-/* Animação para o boss */
 @keyframes bossMovimento {
-    0%, 100% {
-        bottom: 5dvw;
-    }
-    60% {
-        bottom: 37dvw;
-    }
+    0%, 100% { bottom: calc(4 * var(--base-unit)); }
+    60% { bottom: calc(1.2 * var(--altura-pulo)); }
 }
-
 
 .moeda {
     position: absolute;
-    width: 30px;
-    height: 30px;
-    background-image: url('Images/Moeda.png'); 
+    width: calc(2 * var(--base-unit));
+    height: calc(2 * var(--base-unit));
+    background-image: url('Images/Moeda.png');
     background-size: contain;
-    background-repeat: no-repeat; /* A imagem será repetida apenas na horizontal */
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    padding: calc(0.2 * var(--base-unit));
 }
 
-#moeda1 { 
-    width: 30vw;
-    bottom: 15dvw; 
-    left: 24vw; 
-}
-
-#moeda2 { 
-    width: 30vw;
-    bottom: 15dvw; 
-    left: 30vw; 
-}
-#moeda3 { 
-    width: 30vw;
-    bottom: 27dvw; 
-    left: 51vw; 
-}
-#moeda4 { 
-    width: 30vw;
-    bottom: 19dvw; 
-    left: 87vw; 
-}
-#moeda5 { 
-    width: 30vw;
-    bottom: 17dvw; 
-    left: 129dvw; 
-}
-#moeda6 { 
-    width: 30vw;
-    bottom: 28dvw; 
-    left: 154dvw; 
-}
-
+#moeda1 { bottom: calc(12 * var(--base-unit)); left: calc(35 * var(--base-unit)); }
+#moeda2 { bottom: calc(12 * var(--base-unit)); left: calc(65 * var(--base-unit)); }
+#moeda3 { bottom: calc(20 * var(--base-unit)); left: calc(95 * var(--base-unit)); }
+#moeda4 { bottom: calc(15 * var(--base-unit)); left: calc(145 * var(--base-unit)); }
+#moeda5 { bottom: calc(18 * var(--base-unit)); left: calc(195 * var(--base-unit)); }
+#moeda6 { bottom: calc(22 * var(--base-unit)); left: calc(245 * var(--base-unit)); }
 
 .fundo {
     position: relative;
-    width: 300vw;
+    width: calc(300 * var(--base-unit));
     height: 100vh;
     background-color: #567cc2;
     display: flex;
     align-items: flex-end;
     transform: translateX(0);
+    transition: transform 0.15s linear;
 }
 
 #personagem {
     position: fixed;
-    width: 60px;
-    height: 70px;
+    width: calc(5 * var(--base-unit));
+    height: calc(5 * var(--base-unit));
     background-image: url('Images/Jesusidelcompode.png');
-    background-size: cover;
-    bottom: 20dvw;
-    left: 50%;
-    transform: translateX(-50%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: calc(4 * var(--base-unit));
+    left: calc(10 * var(--base-unit));
+    transform: translateX(0);
     box-sizing: border-box;
-    /* Adicionando hitbox mais precisa */
-    padding: 5px;
-    border-radius: 5px;
+    padding: 0;
+    transition: transform 0.15s linear;
 }
 
 #personagem.atirando {
-    background-image: url('Images/Jesusatirando.png'); /* Sprite atirando */
+    background-image: url('Images/Jesusatirando.png');
 }
 
-/* Estilo das plataformas */
+#personagem.esquerda {
+    background-image: url('Images/Jesusidelcompode.png');
+}
+
+#personagem.atirando.esquerda {
+    background-image: url('Images/Jesusatirando.png');
+}
+
 .plataforma {
-    height: 40px;
-    background-image: url('Images/Plataform.png'); /* Sprite da plataforma */
-    background-repeat:repeat; /* Evita repetir a imagem */
-    background-size: contain; /* Mantém as proporções da imagem */
-    position:absolute;
-    /* Melhorando colisão das plataformas */
+    height: calc(3 * var(--base-unit));
+    background-image: url('Images/plataform.png');
+    background-repeat: repeat-x;
+    background-size: contain;
+    position: absolute;
     box-sizing: border-box;
-    padding: 2px;
+    padding: 0;
 }
 
-#plataforma1 {
-    width: 20dvw;
-    bottom: 150px;
-    left: 20dvw;
-}
+#plataforma1 { width: calc(15 * var(--base-unit)); bottom: calc(12 * var(--base-unit)); left: calc(30 * var(--base-unit)); }
+#plataforma2 { width: calc(20 * var(--base-unit)); bottom: calc(20 * var(--base-unit)); left: calc(60 * var(--base-unit)); }
+#plataforma3 { width: calc(15 * var(--base-unit)); bottom: calc(15 * var(--base-unit)); left: calc(100 * var(--base-unit)); }
+#plataforma4 { width: calc(18 * var(--base-unit)); bottom: calc(12 * var(--base-unit)); left: calc(140 * var(--base-unit)); }
+#plataforma5 { width: calc(20 * var(--base-unit)); bottom: calc(18 * var(--base-unit)); left: calc(180 * var(--base-unit)); }
+#plataforma6 { width: calc(15 * var(--base-unit)); bottom: calc(10 * var(--base-unit)); left: calc(210 * var(--base-unit)); }
+#plataforma7 { width: calc(18 * var(--base-unit)); bottom: calc(16 * var(--base-unit)); left: calc(240 * var(--base-unit)); }
 
-#plataforma2 {
-    width: 25dvw;
-    bottom: 300px;
-    left: 40dvw;
-}
-
-#plataforma3 {
-    width: 15dvw;
-    bottom: 200px;
-    left: 80dvw;
-}
-#plataforma4 {
-    width: 20dvw;
-    bottom: 155px;
-    left: 120dvw;
-}
-#plataforma5 {
-    width: 25dvw;
-    bottom: 310px;
-    left: 145dvw;
-}
-#plataforma6 {
-    width: 15dvw;
-    bottom: 160px;
-    left: 175dvw;
-}
-#plataforma7 {
-    width: 20dvw;
-    bottom: 250px;
-    left: 205dvw;
-}
-
-/* Estilo do chão */
 .chao {
     position: absolute;
     bottom: 0;
-    width: 100%; /* O chão cobre a largura da viewport */
-    height: 4dvw;
-    background-image: url('Images/Floor.png'); /* Sprite do chão */
-    background-repeat: repeat-x; /* Repete apenas na horizontal */
-    background-size: contain; /* Mantém as proporções */
-    /* Melhorando colisão do chão */
+    width: 100%;
+    height: calc(4 * var(--base-unit));
+    background-image: url('Images/floor.png');
+    background-repeat: repeat-x;
+    background-size: contain;
     box-sizing: border-box;
-    padding-top: 2px;
+    padding-top: calc(0.2 * var(--base-unit));
 }
 
 .painel {
-    position: absolute;
-    top: 1dvw;
-    left: 1dvw;
+    position: fixed;
+    top: calc(1 * var(--base-unit));
+    left: calc(1 * var(--base-unit));
+    z-index: 100;
+    display: flex;
+    gap: calc(0.5 * var(--base-unit));
 }
 
-/* Estilo dos projéteis */
+.painel button {
+    padding: calc(0.8 * var(--base-unit)) calc(1.5 * var(--base-unit));
+    border: none;
+    border-radius: calc(0.3 * var(--base-unit));
+    font-size: calc(1.2 * var(--base-unit));
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 calc(0.2 * var(--base-unit)) calc(0.5 * var(--base-unit)) rgba(0,0,0,0.2);
+}
+
+#iniciar {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#iniciar:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+#atirar {
+    background-color: #f44336;
+    color: white;
+}
+
+#atirar:hover {
+    background-color: #da190b;
+    transform: scale(1.05);
+}
+
+#reiniciar {
+    background-color: #2196F3;
+    color: white;
+    font-weight: bold;
+}
+
+#reiniciar:hover {
+    background-color: #0b7dda;
+    transform: scale(1.05);
+}
+
 .projetil {
     position: absolute;
-    width: 50px;
-    height: 60px;
-    background-image: url('Images/Tiroplayer.png'); /* Sprite do tiro */
+    width: calc(3 * var(--base-unit));
+    height: calc(5 * var(--base-unit));
+    background-image: url('Images/Tiroplayer.png');
     background-size: contain;
-    background-repeat: no-repeat; /* Repete apenas na horizontal */
-    /* Melhorando colisão dos projéteis */
+    background-repeat: no-repeat;
     box-sizing: border-box;
-    padding: 5px;
+    padding: calc(0.3 * var(--base-unit));
+    bottom: calc(5.2 * var(--base-unit));
+    transition: all 0.05s linear;
 }
 
-/* Acrescentando elementos do boss e mensagens */
-
-.boss {
+.projetil-boss {
     position: absolute;
-    width: 100px;
-    height: 100px;
-    background-image: url('Images/Bossfinal.png'); /* Substitua pela imagem do Boss */
+    width: calc(4 * var(--base-unit));
+    height: calc(6 * var(--base-unit));
+    background-image: url('Images/Tiroboss.png');
     background-size: contain;
-    bottom: 150px;
-    left: calc(300vw - 200px);
-    /* Melhorando colisão do boss */
+    background-repeat: no-repeat;
     box-sizing: border-box;
-    padding: 10px;
+    padding: calc(0.3 * var(--base-unit));
+    bottom: calc(5.2 * var(--base-unit));
+    transition: all 0.25s linear;
 }
 
 .mensagem {
-    position: absolute;
-    top: 20px;
+    position: fixed;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.7);
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.9);
     color: white;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 18px;
+    padding: calc(1.5 * var(--base-unit)) calc(2.5 * var(--base-unit));
+    border-radius: calc(1 * var(--base-unit));
+    font-size: calc(2 * var(--base-unit));
+    text-align: center;
+    min-width: calc(25 * var(--base-unit));
     display: none;
+    box-shadow: 0 0 calc(1.5 * var(--base-unit)) rgba(0,0,0,0.5);
+}
+
+#controles-mobile {
+    position: fixed;
+    bottom: calc(2 * var(--base-unit));
+    left: 0;
+    width: 100%;
+    display: none;
+    justify-content: space-between;
+    padding: 0 calc(4 * var(--base-unit));
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.botao-mobile {
+    width: calc(12 * var(--base-unit));
+    height: calc(12 * var(--base-unit));
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(6 * var(--base-unit));
+    color: white;
+    user-select: none;
+    touch-action: manipulation;
+    box-shadow: 0 calc(0.3 * var(--base-unit)) calc(0.8 * var(--base-unit)) rgba(0,0,0,0.3);
+    transition: transform 0.1s ease;
+    cursor: pointer;
+}
+
+.botao-mobile:active {
+    transform: scale(0.95);
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.controles-esquerda,
+.controles-direita {
+    display: flex;
+    gap: calc(2 * var(--base-unit));
+}
+
+#botao-pular {
+    background-color: rgba(76, 175, 80, 0.7);
+}
+
+#botao-atirar {
+    background-color: rgba(244, 67, 54, 0.7);
+}
+
+@media (max-width: 768px) {
+    :root {
+        --base-unit: min(1vw, 15px);
+        --altura-pulo: calc(12 * var(--base-unit));
+    }
+    
+    body {
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        overflow: hidden;
+    }
+
+    #controles-mobile {
+        display: flex;
+    }
+    
+    .painel {
+        top: 0;
+        left: 0;
+        padding: calc(1 * var(--base-unit));
+        width: auto;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .painel button {
+        font-size: calc(2 * var(--base-unit));
+        padding: calc(1 * var(--base-unit)) calc(2 * var(--base-unit));
+    }
+
+    #atirar {
+        display: none;
+    }
+    
+    .mensagem {
+        width: 80%;
+        font-size: calc(3 * var(--base-unit));
+    }
+
+    #personagem, .fundo {
+        transition: transform 0.08s linear;
+    }
 }

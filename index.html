@@ -9,11 +9,14 @@
 <body>
     <div id="fundo" class="fundo">
         <div id="personagem"></div>
-        <div id="inimigo" class="inimigo"></div>
+        <div id="inimigo1" class="inimigo"></div>
         <div id="inimigo2" class="inimigo"></div>
         <div id="inimigo3" class="inimigo"></div>
         <div id="inimigo4" class="inimigo"></div>
         <div id="inimigo5" class="inimigo"></div>
+        <div id="inimigo6" class="inimigo"></div>
+        <div id="inimigo7" class="inimigo"></div>
+        <div id="inimigo8" class="inimigo"></div>
         <div id="boss" class="boss"></div>
         <div id="moeda1" class="moeda"></div>
         <div id="moeda2" class="moeda"></div>
@@ -21,16 +24,12 @@
         <div id="moeda4" class="moeda"></div>
         <div id="moeda5" class="moeda"></div>
         <div id="moeda6" class="moeda"></div>
-        <div id="moeda7" class="moeda"></div>
-        <div id="moeda8" class="moeda"></div>
-        <div id="moeda9" class="moeda"></div>
         <div id="plataforma1" class="plataforma"></div>
         <div id="plataforma2" class="plataforma"></div>
         <div id="plataforma3" class="plataforma"></div>
         <div id="plataforma4" class="plataforma"></div>
         <div id="plataforma5" class="plataforma"></div>
         <div id="plataforma6" class="plataforma"></div>
-        <div id="plataforma7" class="plataforma"></div>
         <div id="plataforma7" class="plataforma"></div>
         <div id="final" class="final"></div>
         <div id="chao" class="chao"></div>
@@ -43,11 +42,21 @@
         <div id="recorde">Recorde: 0</div>
         <div id="mensagem" class="mensagem"></div>
     </div>
-    <audio id="som-pulo" src="sounds/pulo.mp3"></audio>
-    <audio id="som-tiro" src="sounds/tiro.mp3"></audio>
-    <audio id="som-moeda" src="sounds/moeda.mp3"></audio>
-    <audio id="som-derrota" src="sounds/derrota.mp3"></audio>
-    <audio id="som-vitoria" src="sounds/vitoria.mp3"></audio>
+    <div id="controles-mobile">
+        <div class="controles-esquerda">
+            <div id="botao-esquerda" class="botao-mobile"></div>
+            <div id="botao-direita" class="botao-mobile"></div>
+        </div>
+        <div class="controles-direita">
+            <div id="botao-pular" class="botao-mobile"></div>
+            <div id="botao-atirar" class="botao-mobile"></div>
+        </div>
+    </div>
+    <audio id="som-pulo" src="audios/Sompuloplayer.mp3"></audio>
+    <audio id="som-tiro" src="audios/Somtiroplayer.mp3"></audio>
+    <audio id="som-moeda" src="audios/pegarmoeda.mp3"></audio>
+    <audio id="som-derrota" src="audios/Gameover.mp3"></audio>
+    <audio id="som-vitoria" src="audios/Musicafundo.mp3"></audio>
     <script src="script.js"></script>
 </body>
 </html>
