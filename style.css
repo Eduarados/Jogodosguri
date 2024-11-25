@@ -15,7 +15,7 @@ body {
     position: absolute;
     width: calc(3 * var(--base-unit));
     height: calc(3 * var(--base-unit));
-    background-image: url('./Images/inimigonormal.png');
+    background-image: url('imagens/Inimigonormal.png');
     background-size: contain;
     background-repeat: no-repeat;
     box-sizing: border-box;
@@ -37,7 +37,7 @@ body {
     position: absolute;
     width: calc(10 * var(--base-unit));
     height: calc(10 * var(--base-unit));
-    background-image: url('./Images/Bossfinal.png');
+    background-image: url('imagens/Bossfinal.png');
     background-size: contain;
     background-repeat: no-repeat;
     bottom: calc(4 * var(--base-unit));
@@ -56,7 +56,7 @@ body {
     position: absolute;
     width: calc(2 * var(--base-unit));
     height: calc(2 * var(--base-unit));
-    background-image: url('./Images/Moeda.png');
+    background-image: url('imagens/Moeda.png');
     background-size: contain;
     background-repeat: no-repeat;
     box-sizing: border-box;
@@ -85,7 +85,7 @@ body {
     position: fixed;
     width: calc(5 * var(--base-unit));
     height: calc(5 * var(--base-unit));
-    background-image: url('./Images/Jesusidelcompode.png');
+    background-image: url('imagens/Jesusidelcompode.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -98,20 +98,20 @@ body {
 }
 
 #personagem.atirando {
-    background-image: url('./Images/Jesusatirando.png');
+    background-image: url('imagens/Jesusatirando.png');
 }
 
 #personagem.esquerda {
-    background-image: url('./Images/Jesusidelcompode.png');
+    background-image: url('imagens/Jesusidelcompode.png');
 }
 
 #personagem.atirando.esquerda {
-    background-image: url('./Images/Jesusatirando.png');
+    background-image: url('imagens/Jesusatirando.png');
 }
 
 .plataforma {
     height: calc(3 * var(--base-unit));
-    background-image: url('./Images/plataform.png');
+    background-image: url('imagens/Plataform.png');
     background-repeat: repeat-x;
     background-size: contain;
     position: absolute;
@@ -132,7 +132,7 @@ body {
     bottom: 0;
     width: 100%;
     height: calc(4 * var(--base-unit));
-    background-image: url('./Images/floor.png');
+    background-image: url('imagens/Floor.png');
     background-repeat: repeat-x;
     background-size: contain;
     box-sizing: border-box;
@@ -193,7 +193,7 @@ body {
     position: absolute;
     width: calc(3 * var(--base-unit));
     height: calc(5 * var(--base-unit));
-    background-image: url('./Images/Tiroplayer.png');
+    background-image: url('imagens/Tiroplayer.png');
     background-size: contain;
     background-repeat: no-repeat;
     box-sizing: border-box;
@@ -206,7 +206,7 @@ body {
     position: absolute;
     width: calc(4 * var(--base-unit));
     height: calc(6 * var(--base-unit));
-    background-image: url('./Images/Tiroboss.png');
+    background-image: url('imagens/TiroBoss.png');
     background-size: contain;
     background-repeat: no-repeat;
     box-sizing: border-box;
